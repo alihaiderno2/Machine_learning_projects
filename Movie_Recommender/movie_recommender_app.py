@@ -7,9 +7,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the full paths to the pickle files
 movie_dict_path = os.path.join(current_dir, 'movie_dict.pkl')
 similarity_path = os.path.join(current_dir, 'similarity.pkl')
-movie_dict = pickle.load(open('movie_dict.pkl','rb'))
+movie_dict = pickle.load(open('movie_dict_path','rb'))
 movies = pd.DataFrame(movie_dict)
-similarity = pickle.load(open('similarity.pkl','rb'))
+similarity = pickle.load(open('similarity_path','rb'))
 def recommend(movie):
     movie_index = movies[movies['title']==movie].index[0]
     distances = similarity[movie_index]
