@@ -1,7 +1,12 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
+# Construct the full paths to the pickle files
+movie_dict_path = os.path.join(current_dir, 'movie_dict.pkl')
+similarity_path = os.path.join(current_dir, 'similarity.pkl')
 movie_dict = pickle.load(open('movie_dict.pkl','rb'))
 movies = pd.DataFrame(movie_dict)
 similarity = pickle.load(open('similarity.pkl','rb'))
